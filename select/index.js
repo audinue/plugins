@@ -1,4 +1,5 @@
 function select (selector, attached, detached = () => {}) {
+  Array.from(document.querySelectorAll(selector)).forEach(attached)
   new MutationObserver(mutations => {
     mutations.forEach(mutation => {
       const isElement = node => node instanceof HTMLElement
