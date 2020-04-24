@@ -1,0 +1,42 @@
+<script src="index.js"></script>
+
+<style>
+  #demo {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: auto auto auto;
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+  #demo > * {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #a { background: #F44336 }
+  #b { background: #FF4081 }
+  #c {
+    background: #9C27B0;
+    grid-row: span 2;
+  }
+  #d { background: #7C4DFF }
+  #e { background: #3F51B5 }
+  #f {
+    background: #448AFF;
+    grid-column: span 2;
+  }
+  #g { background: #03A9F4 }
+</style>
+
+<div id="demo" class="resizable-grid">
+  <div id="a">A</div>
+  <div id="b">B</div>
+  <div id="c">C</div>
+  <div id="d">D</div>
+  <div id="e">E</div>
+  <div id="f">F</div>
+  <div id="g">G</div>
+</div>
