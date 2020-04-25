@@ -27,7 +27,9 @@ Make [CSS grid layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid
 ```
 
 - This plugin modifies `grid-template-rows` and `grid-template-columns`.
-- `grid-resize-begin`, `grid-resize` and `grid-resize-end` events will be dispatched on resize.
+- On resize:
+  - `resizable-grid-start`, `resizable-grid-move` and `resizable-grid-end` events will be dispatched.
+  - `resizable-grid-resize` class will be added on resize.
 
 ## Limitations
 

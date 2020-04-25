@@ -64,7 +64,8 @@
     if (result !== null && (result.row > -1 || result.column > -1)) {
       e.preventDefault()
       resizing = result
-      result.grid.dispatchEvent(new CustomEvent('grid-resize-begin', {
+      result.grid.classList.add('resizable-grid-resize')
+      result.grid.dispatchEvent(new CustomEvent('resizable-grid-start', {
         bubbles: true
       }))
     }
@@ -101,7 +102,7 @@
         resizing.columns[resizing.column + 1]  -= e.movementX
         resizing.grid.style.gridTemplateColumns = toSizesString(resizing.columns)
       }
-      resizing.grid.dispatchEvent(new CustomEvent('grid-resize', {
+      resizing.grid.dispatchEvent(new CustomEvent('resizable-grid-move', {
         bubbles: true
       }))
     }
@@ -109,7 +110,8 @@
 
   addEventListener('mouseup', function mouseup () {
     if (resizing !== null) {
-      resizing.grid.dispatchEvent(new CustomEvent('grid-resize-end', {
+      resizing.grid.classList.remove('resizable-grid-resize')
+      resizing.grid.dispatchEvent(new CustomEvent('resizable-grid-end', {
         bubbles: true
       }))
       resizing = null
